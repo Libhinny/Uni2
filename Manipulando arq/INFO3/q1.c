@@ -11,14 +11,14 @@ int main(void){
     FILE * s;
     int n;
 
+    printf("Digite a quantidade de funcionários a serem cadastrados: \n");
+    scanf("%d", &n);
+
     Funcionarios * pessoal = (Funcionarios*)malloc(n*sizeof(Funcionarios));
         if (pessoal == NULL){
             printf("Erro na alocação de memória");
             exit(1);
         }
-
-    printf("Digite a quantidade de funcionários a serem cadastrados: \n");
-    scanf("%d", &n);
 
     for (int i = 0; i < n; i++){
         printf("Informe o id: \n");
@@ -35,9 +35,9 @@ int main(void){
             fclose(s);
             return 1;
         }
-    fprintf(s, "Dados dos funcionários");
+    fprintf(s, "Dados dos funcionários\n");
     for(int j = 0; j < n; j++){
-        fprintf("Dados\n Id: %d | Nome: %s | Salário: %.2f \n", pessoal[j].id, pessoal[j].nome, pessoal[j].salario);
+        fprintf(s, "Dados\n Id: %d | Nome: %s | Salário: %.2f \n", pessoal[j].id, pessoal[j].nome, pessoal[j].salario);
     }
 
     fclose(s);
