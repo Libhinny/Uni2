@@ -31,7 +31,7 @@ void pto_acessa (Ponto* p, float* x, float* y){
 
 void pto_atribui (Ponto* p, float x, float y){
     p->x= x;
-    p->y = y;
+    p->y= y;
 }
 
 float pto_distancia (Ponto* p1, Ponto* p2){
