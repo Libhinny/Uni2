@@ -53,18 +53,23 @@ T(n) = O(n)
 #include <stdio.h>
 
 unsigned long long factorial (int n ) {
-    if ( n == 0 || n == 1) { // c1
-    return 1; // c2
+    if ( n == 0 || n == 1) { 
+    return 1; 
     }
-    unsigned long long result = 1; // c3
-    for (int i = 2; i <= n ; i ++) { // c4
-    result *= i ; // c5*
+    unsigned long long result = 1; // c1
+    for (int i = 2; i <= n ; i ++) { // c2*n
+    result *= i ; // c3*n
     }
-    return result; // C6
+    return result; // c4
 }
 int main () {
-int n = 10; // c7
-    unsigned long long result = factorial ( n ); // 
-    printf (" Factorial of %d is %f\n", n , result ); //
-    return 0; // 
+int n = 10; // c5
+    unsigned long long result = factorial ( n ); // c6
+    printf (" Factorial of %d is %f\n", n , result ); // c7
+    return 0; // c8
 }
+/* 
+
+T(n)= O(n) 
+
+*/ 
